@@ -23,6 +23,7 @@ public class SteeringWheelDetector : MonoBehaviour
 
     public Toggle correctToggle;
     public Toggle wrongToggle;
+    public Toggle starTaskToggle;
 
     public bool startStudy;
     public bool correctButton;
@@ -46,6 +47,7 @@ public class SteeringWheelDetector : MonoBehaviour
         IPInputField.GetComponent<TMP_InputField>();
         CPortInputField.GetComponent<TMP_InputField>();
         QPortInputField.GetComponent<TMP_InputField>();
+        starTaskToggle.GetComponent<Toggle>();
         correctToggle.GetComponent<Toggle>();
         wrongToggle.GetComponent<Toggle>();
 
@@ -63,6 +65,7 @@ public class SteeringWheelDetector : MonoBehaviour
         // Set local port.
         Receiver.LocalPort = LocalPort;
 
+        starTaskToggle.isOn = false;
         correctToggle.isOn = false;
         wrongToggle.isOn = false;
         
@@ -75,6 +78,7 @@ public class SteeringWheelDetector : MonoBehaviour
         Receiver.Bind("/startStudy", ReceiveStartStudy);
         if (startStudy)
         {
+            starTaskToggle.isOn = true;
             if (LogitechGSDK.LogiUpdate() && LogitechGSDK.LogiIsConnected(0))
             {
 
@@ -129,6 +133,7 @@ public class SteeringWheelDetector : MonoBehaviour
 
             }
         }
+        starTaskToggle.isOn = false;
     }
 
     protected void ReceiveStartStudy(OSCMessage message)
