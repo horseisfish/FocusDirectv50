@@ -56,7 +56,7 @@ public class EventControlWithoutNback : MonoBehaviour
     [Space(5)]
     [Header("Condition setting")]
 
-    public conditionType whichCondition = conditionType.targetPlan;
+    public conditionType whichCondition = conditionType.Visual;
     public int trialRepeatTime;
     public float trialTime;
     public float trialRestTime;
@@ -117,10 +117,9 @@ public class EventControlWithoutNback : MonoBehaviour
     }
     public enum conditionType
     {
-        sourcePlan = 1,
-        targetPlan = 2,
-        HUDPlan = 3,
-        Sound = 4
+        Visual = 1,
+        Sound = 2,
+        Both = 3
     }
        
 

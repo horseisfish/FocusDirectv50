@@ -36,14 +36,25 @@ public class TargetGeneraterWithOSC : MonoBehaviour
     {
         obj = Instantiate(objectPrefab, Vector3.zero, Quaternion.identity,Parent);
         Target = obj;
-        if(conditionType != 3)
+        if(conditionType == 1)
         {
             LineController newLine = Instantiate(linePrefab, obj.transform);
             newLine.AssignTarget(transform.position, Target.transform, TargetWidth);
         }
         
-        if(conditionType == 3)
+        if(conditionType == 2)
         {
+            AudioSource serion = obj.GetComponent<AudioSource>();
+            if (!serion.isPlaying)
+            {
+                serion.Play();
+            }
+        }
+
+        if (conditionType == 3)
+        {
+            LineController newLine = Instantiate(linePrefab, obj.transform);
+            newLine.AssignTarget(transform.position, Target.transform, TargetWidth);
             AudioSource serion = obj.GetComponent<AudioSource>();
             if (!serion.isPlaying)
             {

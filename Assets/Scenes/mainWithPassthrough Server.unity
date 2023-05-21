@@ -4606,12 +4606,12 @@ MonoBehaviour:
   fNIRSIPInputField: {fileID: 665923722}
   fNIRSRPortInputField: {fileID: 615694673}
   fNIRSLPortInputField: {fileID: 1741391588}
-  whichCondition: 4
+  whichCondition: 2
   trialRepeatTime: 4
   trialTime: 60
   trialRestTime: 20
   TargetNumbers: 10
-  targetRestTime: 0.5
+  targetRestTime: 5
   gazeTimeIs: 0.5
   minRadius: 1
   maxRadius: 5

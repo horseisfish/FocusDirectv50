@@ -23,10 +23,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/mainWithPassthrough Server.unity
     guid: ef75017fd565f534eb81c02b4452e74b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/mainWithPassthrough Oculus.unity
     guid: 816ae99580930f24e8b6a62501cbc8b1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mainWithPassthrough Steering Wheel.unity
     guid: 3b8ebba7c7a5edf48ad745ab7abec65c
   m_configObjects:
