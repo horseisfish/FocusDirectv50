@@ -2356,6 +2356,7 @@ GameObject:
   - component: {fileID: 1262023392}
   - component: {fileID: 1262023394}
   - component: {fileID: 1262023395}
+  - component: {fileID: 1262023396}
   m_Layer: 0
   m_Name: fNIRSController
   m_TagString: Untagged
@@ -2385,7 +2386,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262023390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cacf4638eea597a40b1648c15a5a5631, type: 3}
   m_Name: 
@@ -2395,6 +2396,7 @@ MonoBehaviour:
   moment: 3
   IrregularRate: 1
   Source_ID: Aurora
+  whichCondition: 
   startTesk: 0
   sendTrigger: 0
 --- !u!114 &1262023395
@@ -2409,7 +2411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ef3a054ca65f646afeea464cc275c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AuroraGameObject: {fileID: 1262023390}
+  maker: {fileID: 1262023396}
   RemoteHost: 192.168.61
   RemotePort: 7002
   LocalPort: 7002
@@ -2418,9 +2420,24 @@ MonoBehaviour:
   IPInputField: {fileID: 89458105}
   CPortInputField: {fileID: 577123239}
   QPortInputField: {fileID: 926908610}
+  WhichConditionInt: 0
   startStudy: 0
   startTask: 0
   sendTrigger: 0
+--- !u!114 &1262023396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262023390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f6a5f2a177ae14badbe859d5c565d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lslStreamName: Trigger
+  lslStreamType: Markers
 --- !u!1 &1262668824
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using extOSC;
 using TMPro;
+using Assets.LSL4Unity.Scripts;
 
 public class fNIRSController : MonoBehaviour
 {
     [Header("Script append")]
     [SerializeField]
-    GameObject AuroraGameObject;
-
-    LSL4Unity.Samples.Complex.AuroraTriggerWithoutnBack auroraTrigger;
+    public LSLMarkerStream maker;
 
     [Space(5)]
     [Header("OSC setting")]
@@ -36,7 +35,7 @@ public class fNIRSController : MonoBehaviour
     void Start()
     {
 
-        auroraTrigger = AuroraGameObject.GetComponent<LSL4Unity.Samples.Complex.AuroraTriggerWithoutnBack>();
+        maker = GetComponent<LSLMarkerStream>();
         IPInputField.GetComponent<TMP_InputField>();
         CPortInputField.GetComponent<TMP_InputField>();
         QPortInputField.GetComponent<TMP_InputField>();
@@ -62,12 +61,11 @@ public class fNIRSController : MonoBehaviour
 
 
         if (startStudy)
-        {
-            auroraTrigger.startTesk = startTask;
-            
+        {                      
             if (sendTrigger)
             {
-                auroraTrigger.SendTrigger();
+                maker.Write(WhichConditionInt.ToString());
+                sendTrigger = false;
             }
         }
     }
@@ -80,7 +78,6 @@ public class fNIRSController : MonoBehaviour
     protected void ReceiveSendTrigger(OSCMessage message)
     {
         WhichConditionInt = message.Values[0].IntValue;
-        auroraTrigger.whichCondition = WhichConditionInt.ToString();
         startTask = message.Values[1].BoolValue;
         sendTrigger = message.Values[2].BoolValue;
     }

@@ -8,7 +8,7 @@ public class QuestionDisplayer : MonoBehaviour
 {
 
     NBackReader questiondata;
-    LSL4Unity.Samples.Complex.AuroraTrigger triggerData;
+    //LSL4Unity.Samples.Complex.AuroraTrigger triggerData;
 
     [SerializeField]
     GameObject question;
@@ -27,7 +27,7 @@ public class QuestionDisplayer : MonoBehaviour
     void Start()
     {
         questiondata = question.GetComponent<NBackReader>();
-        triggerData = trigger.GetComponent<LSL4Unity.Samples.Complex.AuroraTrigger>();
+        //triggerData = trigger.GetComponent<LSL4Unity.Samples.Complex.AuroraTrigger>();
         
         
     }
@@ -38,21 +38,21 @@ public class QuestionDisplayer : MonoBehaviour
         if (currentQuestion < questiondata.myQuestionList.questions.Length)
         {
 
-            if (triggerData.showFixation)
-            {
-                displayText.text = "+";
-            }
+            //if (triggerData.showFixation)
+            //{
+            //    displayText.text = "+";
+            //}
 
-            if (triggerData.showCurrentQuestion)
-            {
-                displayText.text = questiondata.myQuestionList.questions[currentQuestion].alphabet;
-                nbackCorr = questiondata.myQuestionList.questions[currentQuestion].corresp;
-            }
+            //if (triggerData.showCurrentQuestion)
+            //{
+            //    displayText.text = questiondata.myQuestionList.questions[currentQuestion].alphabet;
+            //    nbackCorr = questiondata.myQuestionList.questions[currentQuestion].corresp;
+            //}
 
-            if (triggerData.timesUp)
-            {
-                currentQuestion++;
-            }
+            //if (triggerData.timesUp)
+            //{
+            //    currentQuestion++;
+            //}
 
         }
         else

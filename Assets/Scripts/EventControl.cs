@@ -19,7 +19,7 @@ public class EventControl : MonoBehaviour
     [SerializeField]
     GameObject questionDisplayObject;
 
-    LSL4Unity.Samples.Complex.AuroraTrigger auroraTrigger;
+    //LSL4Unity.Samples.Complex.AuroraTrigger auroraTrigger;
     NBackReader nBackReaderFile;
     TargetGenerater targetGenerater;
     EyeTrackingRay LefteyeTracking;
@@ -89,7 +89,7 @@ public class EventControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        auroraTrigger = AuroraGameObject.GetComponent<LSL4Unity.Samples.Complex.AuroraTrigger>();
+        //auroraTrigger = AuroraGameObject.GetComponent<LSL4Unity.Samples.Complex.AuroraTrigger>();
         nBackReaderFile = nBackReaderObject.GetComponent<NBackReader>();
         targetGenerater = targetGenerateObject.GetComponent<TargetGenerater>();
         LefteyeTracking = eyeTrackingLeftObject.GetComponent<EyeTrackingRay>();
@@ -99,8 +99,8 @@ public class EventControl : MonoBehaviour
         targetFindingTimeList = new List<float>();
         targetFindingResultList = new List<bool>();
         nBackResult = new List<bool>();
-        auroraTrigger.FixationInterval = focusTime;
-        auroraTrigger.TrialInterval = alphabetShowTime;
+        //auroraTrigger.FixationInterval = focusTime;
+        //auroraTrigger.TrialInterval = alphabetShowTime;
         switch (n_Back)
         {
             case 1:
@@ -158,7 +158,7 @@ public class EventControl : MonoBehaviour
                 
                 if (timer < trialTime)
                 {
-                    auroraTrigger.startTesk = true;
+                    //auroraTrigger.startTesk = true;
                     //Debug.Log(questionDisplayer.currentQuestion);
                     if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)!=0)
                     {
@@ -258,7 +258,7 @@ public class EventControl : MonoBehaviour
                 }
                 else if (timer < trialTime + trialRestTime)
                 {
-                    auroraTrigger.startTesk = false;
+                    //auroraTrigger.startTesk = false;
                     SaveToCSV();
                     questionDisplayer.displayText.text = "Take a Rest";
                     Destroy(targetGenerater.obj);
