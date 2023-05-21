@@ -398,9 +398,7 @@ public class EventControlWithoutNback : MonoBehaviour
 
                 // Call the function to send the steering wheel button
                 SendfNIRSTrigger(fNIRSStartTask, sendtriggers);
-                sendtriggers = false;
-                Debug.Log("fNIRSStartTask: " + fNIRSStartTask + " sendtriggers: " + sendtriggers);
-                SendfNIRSTrigger(fNIRSStartTask, sendtriggers);
+                sendtriggers = false;               
                 // Update the previous state variables
                 prevfNIRSStartTask = fNIRSStartTask;
                 prevsendtriggers = sendtriggers;
@@ -489,6 +487,7 @@ public class EventControlWithoutNback : MonoBehaviour
         startStudyMessage.AddValue(OSCValue.Bool(start));
         QuestTransmitter.Send(startStudyMessage);
         PCTransmitter.Send(startStudyMessage);
+        fNIRSTransmitter.Send(startStudyMessage);
     }
 
     public void SendPassthrough(bool hide)

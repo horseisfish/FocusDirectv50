@@ -4584,7 +4584,7 @@ MonoBehaviour:
   filePath: ./LogData/
   QuestHost: 192.168.68.76
   PCHost: 192.168.68.54
-  fNIRSHost: 192.168.68.60
+  fNIRSHost: 192.168.68.63
   QuestRemotePort: 7000
   QuestLocalPort: 7000
   PCRemotePort: 7001
@@ -4606,10 +4606,10 @@ MonoBehaviour:
   fNIRSIPInputField: {fileID: 665923722}
   fNIRSRPortInputField: {fileID: 615694673}
   fNIRSLPortInputField: {fileID: 1741391588}
-  whichCondition: 1
-  trialRepeatTime: 2
-  trialTime: 10
-  trialRestTime: 2
+  whichCondition: 4
+  trialRepeatTime: 4
+  trialTime: 60
+  trialRestTime: 20
   TargetNumbers: 10
   targetRestTime: 0.5
   gazeTimeIs: 0.5
