@@ -95,6 +95,10 @@ public class EventControlWithoutNback : MonoBehaviour
     private bool destroyObj = true;
     public bool sendtriggers = false;
     public bool fNIRSStartTask = false;
+    public bool receivedPing = false;
+    public bool receiveQuestPing = false;
+    public bool receivefNIRSPing = false;
+    public bool receivePCPing = false;
     signType whichSigh;
     private Coroutine generateCoroutine;
     private bool prevfNIRSStartTask= false;
@@ -338,6 +342,15 @@ public class EventControlWithoutNback : MonoBehaviour
                 {
                     //auroraTrigger.startTesk = false;
                     fNIRSStartTask = false;
+                    if (targetIndex < TargetNumbers)
+                    {
+                        for (int i = targetIndex; i < TargetNumbers; i++)
+                        {
+                            targetFindingTimeList[i] = -1;
+                            targetFindingResultList[targetIndex] = false;
+                        }
+                    }
+                    
                     SaveToCSV();
                     //SendDestroyObj(destroyObj);
                     targeAlive = false;
@@ -478,6 +491,11 @@ public class EventControlWithoutNback : MonoBehaviour
     {
         correctButton = message.Values[0].BoolValue;
         wrongButton = message.Values[1].BoolValue;
+    }
+
+    protected void receivedPingOSC(OSCMessage message)
+    {
+        receivedPing = false;
     }
 
     public void SendStartStudy(bool start)

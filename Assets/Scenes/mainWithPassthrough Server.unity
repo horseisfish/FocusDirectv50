@@ -4606,9 +4606,9 @@ MonoBehaviour:
   fNIRSIPInputField: {fileID: 665923722}
   fNIRSRPortInputField: {fileID: 615694673}
   fNIRSLPortInputField: {fileID: 1741391588}
-  whichCondition: 2
+  whichCondition: 1
   trialRepeatTime: 4
-  trialTime: 60
+  trialTime: 10
   trialRestTime: 20
   TargetNumbers: 10
   targetRestTime: 5
@@ -4637,6 +4637,10 @@ MonoBehaviour:
   wrongButton: 0
   sendtriggers: 0
   fNIRSStartTask: 0
+  receivedPing: 0
+  receiveQuestPing: 0
+  receivefNIRSPing: 0
+  receivePCPing: 0
 --- !u!1 &1355057297
 GameObject:
   m_ObjectHideFlags: 0
