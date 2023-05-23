@@ -68,7 +68,14 @@ public class SteeringWheelDetector : MonoBehaviour
         starTaskToggle.isOn = false;
         correctToggle.isOn = false;
         wrongToggle.isOn = false;
-        
+
+        //LogitechGSDK.LogiStopSpringForce(0);
+
+
+        //LogitechGSDK.LogiStopConstantForce(0);
+
+
+        //LogitechGSDK.LogiStopDamperForce(0);
         Debug.Log("SteeringInit:" + LogitechGSDK.LogiSteeringInitialize(false));
     }
 
@@ -85,9 +92,14 @@ public class SteeringWheelDetector : MonoBehaviour
                 
                 
                 LogitechGSDK.LogiControllerPropertiesData actualProperties = new LogitechGSDK.LogiControllerPropertiesData();
+                
+                actualProperties.forceEnable = false;
                 LogitechGSDK.LogiGetCurrentControllerProperties(0, ref actualProperties);
                 //LogitechGSDK.DIJOYSTATE2ENGINES rec;
                 //rec = LogitechGSDK.LogiGetStateUnity(0);
+
+                
+
                 Debug.Log(LogitechGSDK.LogiButtonIsPressed(0, 2));
                 if (LogitechGSDK.LogiButtonIsPressed(0,2) || Input.GetKeyDown(KeyCode.A))
                 {
