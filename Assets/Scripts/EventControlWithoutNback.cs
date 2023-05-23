@@ -350,7 +350,7 @@ public class EventControlWithoutNback : MonoBehaviour
                             targetFindingResultList[targetIndex] = false;
                         }
                     }
-                    stopTask();
+                    //stopTask();
                     SaveToCSV();
                     //SendDestroyObj(destroyObj);
                     targeAlive = false;
@@ -374,7 +374,7 @@ public class EventControlWithoutNback : MonoBehaviour
                     //sendtriggers = false;                    
                     passthroughHidden = false;
                     //SendPassthrough(passthroughHidden);
-                    startTask();
+                    //startTask();
                     shuffleList(targetList);
                     targetIndex = 0;
                     timer = 0f;
