@@ -1,0 +1,11 @@
+Target Area, Target sign,TargetFinding Time, TargetFinding result
+1,1,2.938262,True
+0,0,1.534201,True
+1,1,6.259082,True
+0,0,2.052741,True
+1,0,2.587241,True
+0,1,1.690526,True
+1,1,1.921842,True
+0,1,-1,False
+0,1,-1,False
+1,0,-1,False
